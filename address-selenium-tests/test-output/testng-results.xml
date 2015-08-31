@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14015" started-at="2015-08-31T08:51:17Z" finished-at="2015-08-31T08:51:31Z">
+  <suite name="Default suite" duration-ms="10785" started-at="2015-08-31T09:38:54Z" finished-at="2015-08-31T09:39:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14015" started-at="2015-08-31T08:51:17Z" finished-at="2015-08-31T08:51:31Z">
+    <test name="Default test" duration-ms="10785" started-at="2015-08-31T09:38:54Z" finished-at="2015-08-31T09:39:04Z">
       <class name="com.example.tests.AlsoGroupCreation">
-        <test-method status="PASS" signature="testEmptyGroupCreation()[pri:0, instance:com.example.tests.AlsoGroupCreation@387c703b]" name="testEmptyGroupCreation" duration-ms="1272" started-at="2015-08-31T11:51:26Z" finished-at="2015-08-31T11:51:27Z">
+        <test-method status="PASS" signature="testEmptyGroupCreation()[pri:0, instance:com.example.tests.AlsoGroupCreation@387c703b]" name="testEmptyGroupCreation" duration-ms="1463" started-at="2015-08-31T12:38:59Z" finished-at="2015-08-31T12:39:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyGroupCreation -->
-        <test-method status="PASS" signature="testNonEmptyGroupCreation()[pri:0, instance:com.example.tests.AlsoGroupCreation@387c703b]" name="testNonEmptyGroupCreation" duration-ms="1558" started-at="2015-08-31T11:51:27Z" finished-at="2015-08-31T11:51:29Z">
+        <test-method status="PASS" signature="testNonEmptyGroupCreation()[pri:0, instance:com.example.tests.AlsoGroupCreation@387c703b]" name="testNonEmptyGroupCreation" duration-ms="1715" started-at="2015-08-31T12:39:01Z" finished-at="2015-08-31T12:39:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNonEmptyGroupCreation -->
       </class> <!-- com.example.tests.AlsoGroupCreation -->
       <class name="com.example.tests.TestBase">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.TestBase@22a71081]" name="setUp" is-config="true" duration-ms="9148" started-at="2015-08-31T11:51:17Z" finished-at="2015-08-31T11:51:26Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.TestBase@22a71081]" name="setUp" is-config="true" duration-ms="5641" started-at="2015-08-31T12:38:54Z" finished-at="2015-08-31T12:38:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.TestBase@22a71081]" name="tearDown" is-config="true" duration-ms="586" started-at="2015-08-31T11:51:30Z" finished-at="2015-08-31T11:51:31Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.TestBase@22a71081]" name="tearDown" is-config="true" duration-ms="434" started-at="2015-08-31T12:39:04Z" finished-at="2015-08-31T12:39:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.TestBase -->
       <class name="com.example.tests.GroupCreationTests">
-        <test-method status="PASS" signature="testEmptyGroupCreation()[pri:0, instance:com.example.tests.GroupCreationTests@224aed64]" name="testEmptyGroupCreation" duration-ms="685" started-at="2015-08-31T11:51:29Z" finished-at="2015-08-31T11:51:29Z">
+        <test-method status="PASS" signature="testEmptyGroupCreation()[pri:0, instance:com.example.tests.GroupCreationTests@224aed64]" name="testEmptyGroupCreation" duration-ms="685" started-at="2015-08-31T12:39:03Z" finished-at="2015-08-31T12:39:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyGroupCreation -->
-        <test-method status="PASS" signature="testNonEmptyGroupCreation()[pri:0, instance:com.example.tests.GroupCreationTests@224aed64]" name="testNonEmptyGroupCreation" duration-ms="754" started-at="2015-08-31T11:51:29Z" finished-at="2015-08-31T11:51:30Z">
+        <test-method status="PASS" signature="testNonEmptyGroupCreation()[pri:0, instance:com.example.tests.GroupCreationTests@224aed64]" name="testNonEmptyGroupCreation" duration-ms="836" started-at="2015-08-31T12:39:03Z" finished-at="2015-08-31T12:39:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNonEmptyGroupCreation -->
