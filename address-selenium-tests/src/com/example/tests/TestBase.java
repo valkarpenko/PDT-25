@@ -10,6 +10,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -63,7 +64,7 @@ public class TestBase {
 	    driver.findElement(By.linkText("groups")).click();
 	}
 
-	protected void openManePage() {
+	protected void openMainPage() {
 	    driver.get(baseUrl + "/addressbookv4.1.4/");
 	}
 
@@ -99,5 +100,42 @@ public class TestBase {
 	      acceptNextAlert = true;
 	    }
 	  }
+
+	protected void gotoContactPage() {
+		driver.findElement(By.linkText("add new")).click();
+	}
+
+	protected void submitContactCreation() {
+		driver.findElement(By.name("submit")).click();
+	}
+
+	protected void fillContactForm(ContactData data) {
+				driver.findElement(By.name("firstname")).clear();
+			    driver.findElement(By.name("firstname")).sendKeys(data.firstname);
+			    driver.findElement(By.name("lastname")).clear();
+			    driver.findElement(By.name("lastname")).sendKeys(data.lastname);
+			    driver.findElement(By.name("address")).clear();
+			    driver.findElement(By.name("address")).sendKeys(data.address);
+			    driver.findElement(By.name("home")).clear();
+			    driver.findElement(By.name("home")).sendKeys(data.home);
+			    driver.findElement(By.name("mobile")).clear();
+			    driver.findElement(By.name("mobile")).sendKeys(data.mobile);
+			    driver.findElement(By.name("work")).clear();
+			    driver.findElement(By.name("work")).sendKeys(data.work);
+			    driver.findElement(By.name("email")).clear();
+			    driver.findElement(By.name("email")).sendKeys(data.email);
+			    driver.findElement(By.name("email2")).clear();
+			    driver.findElement(By.name("email2")).sendKeys(data.email2);
+			    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(data.bday);
+			    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(data.bmonth);
+			    driver.findElement(By.name("byear")).clear();
+			    driver.findElement(By.name("byear")).sendKeys(data.byear);
+			    driver.findElement(By.name("address")).clear();
+			    driver.findElement(By.name("address")).sendKeys(data.address1);
+			    driver.findElement(By.name("address2")).clear();
+			    driver.findElement(By.name("address2")).sendKeys(data.address2);
+			    driver.findElement(By.name("phone2")).clear();
+			    driver.findElement(By.name("phone2")).sendKeys(data.phone2);
+			}
 
 }
