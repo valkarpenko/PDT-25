@@ -1,7 +1,6 @@
 package com.example.fw;
 
 import org.openqa.selenium.By;
-
 import com.example.tests.ContactData;
 
 public class ContactHelper extends HelperBase{
@@ -30,9 +29,30 @@ public class ContactHelper extends HelperBase{
 		type(By.name("address2"),contact.address2);
 		type(By.name("phone2"),contact.phone2);
 	}
+
+	public void returnToHomePage() {
+		click(By.linkText("home page"));
+	}
+	
+	private void selectContactByIndex(int index) {
+		click(By.xpath("//tr[@name='entry'][" + index + "]/td/a/img[@title='Edit']"));
+			}
+
+   public void deleteContact(int index) {
+		selectContactByIndex(index);
+		click(By.xpath("//input[@name='update'][@value='Delete']"));
+	}
 	
 	public void submitContactCreation() {
 		click(By.name("submit"));
+	}
+
+	public void initContactModification(int index) {
+		selectContactByIndex(index);
+	}
+	
+	public void submitContactModification() {
+		click(By.xpath("//input[@name='update'][@value='Update']"));
 	}
 
 

@@ -12,13 +12,13 @@ public abstract class HelperBase {
 	public boolean acceptNextAlert = true;
 	protected WebDriver driver;
 
-	public HelperBase (ApplicationManager manager) {
+	protected HelperBase (ApplicationManager manager) {
 		this.manager = manager;
 		this.driver = manager.driver;
 
 		
 	}
-	public boolean isElementPresent(By by) {
+	protected boolean isElementPresent(By by) {
 	    try {
 	    manager.driver.findElement(by);
 	      return true;
@@ -27,7 +27,7 @@ public abstract class HelperBase {
 	    }
 	  }
 
-	public String closeAlertAndGetItsText() {
+	protected String closeAlertAndGetItsText() {
 	    try {
 	      Alert alert = manager.driver.switchTo().alert();
 	      String alertText = alert.getText();
@@ -52,7 +52,9 @@ public abstract class HelperBase {
 	}
 	
 	protected void selectByText(By locator, String text) {
+		if (text != null) {
 		new Select(driver.findElement(locator)).selectByVisibleText(text);
+		}
 	}
 
 }
