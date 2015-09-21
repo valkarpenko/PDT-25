@@ -1,21 +1,17 @@
 package com.example.tests;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class GroupCreationTests extends TestBase{
 	
 
-  @Test(dataProvider = "randomValidgroupGenerator")
-  public void testGroupCreationwithValiddata(GroupData group) throws Exception {
+  @Test(dataProvider = "randomValidGroupGenerator")
+  public void testGroupCreationwithValidData(GroupData group) throws Exception {
 	app.getNavigationHelper().openMainPage();
 	app.getNavigationHelper().gotoGroupsPage();
 	
