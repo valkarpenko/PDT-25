@@ -63,7 +63,68 @@ public class ContactData implements Comparable<ContactData>{
 	public int compareTo(ContactData other) {
 		return this.email.toLowerCase().compareTo(other.email.toLowerCase());
 	}
-
+	public ContactData withFirstname(String firstname) {
+		this.firstname = firstname;
+		return this;
+	}
 	
+	public ContactData withLastname(String lastname) {
+		this.lastname = lastname;
+		return this;
+	}
+	
+	public ContactData withAddress(String address) {
+		this.address = address;
+		return this;
+	}
+	
+	public ContactData withHome(String home) {
+		this.home = home;
+		return this;
+	}
+	public ContactData withMobile(String mobile) {
+		this.mobile = mobile;
+		return this;
+	}
+	
+	public ContactData withWork(String work) {
+		this.work = work;
+		return this;
+	}
+	
+	public ContactData withEmail(String email) {
+		this.email = email;
+		return this;
+	}
+	public ContactData withEmail2(String email2) {
+		this.email2 = email2;
+		return this;
+	}
+	public ContactData withBday(String bday) {
+		this.bday = bday;
+		return this;
+	}
+	public ContactData withBmonth(String bmonth) {
+		this.bmonth = bmonth;
+		return this;
+	}
+	public ContactData withByear(String byear) {
+		this.byear = byear;
+		return this;
+	}
+	public ContactData withAddress1(String address1) {
+		this.address1 = address1;
+		return this;
+	}
+	public ContactData withAddress2(String address2) {
+		this.address2 = address2;
+		return this;
+	}
+	public ContactData withPhone2(String phone2) {
+		this.phone2 = phone2;
+		return this;
+	}
+	
+		
 	
 }
