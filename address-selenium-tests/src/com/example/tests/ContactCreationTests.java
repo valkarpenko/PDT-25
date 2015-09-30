@@ -8,9 +8,7 @@ import com.example.utils.SortedListOf;
 public class ContactCreationTests extends TestBase{
 
   @Test(dataProvider="randomValidContactGenerator")
-  public void testContactCreationwithValidData(ContactData contact) throws Exception {
-	app.navigateTo().mainPage();
-		
+  public void testContactCreationwithValidData(ContactData contact) throws Exception {		
 	// save old state
 	SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 	

@@ -2,7 +2,6 @@ package com.example.fw;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.example.tests.ContactData;
 import com.example.utils.SortedListOf;
 
@@ -32,9 +31,8 @@ public class ContactHelper extends HelperBase{
 
 	       for (WebElement checkbox : checkboxes){
 	          List<WebElement> columns =checkbox.findElements(By.tagName("td"));
-	           ContactData contact = new ContactData();
-	           contact.email=columns.get(3).getText();
-	           cachedContacts.add(contact);
+	           String email=columns.get(3).getText();
+	           cachedContacts.add(new ContactData().withEmail(email));
 	       }
 	}
 
@@ -49,7 +47,7 @@ public class ContactHelper extends HelperBase{
 	
 	public ContactHelper modifyContact(int index, ContactData contact) {
 		initContactModification(index);
-		fillContactForm(contact, ContactHelper.MODIFICATION);
+		fillContactForm(contact, MODIFICATION);
 		submitContactModification();
 	    returnToHomePage();
 	    rebuildCache();
@@ -69,17 +67,17 @@ public class ContactHelper extends HelperBase{
 	}
 
 	public void fillContactForm(ContactData contact, boolean formType) {
-		type(By.name("firstname"),contact.firstname);
-		type(By.name("lastname"),contact.lastname);
-		type(By.name("address"),contact.address);
-		type(By.name("home"),contact.home);
-		type(By.name("mobile"),contact.mobile);
-		type(By.name("work"),contact.work);
-		type(By.name("email"),contact.email);
-		type(By.name("email2"),contact.email2);
-	    selectByText(By.name("bday"),contact.bday);
-	    selectByText(By.name("bmonth"),contact.bmonth);
-		type(By.name("byear"),contact.byear);
+		type(By.name("firstname"),contact.getFirstname());
+		type(By.name("lastname"),contact.getLastname());
+		type(By.name("address"),contact.getAddress());
+		type(By.name("home"),contact.getHome());
+		type(By.name("mobile"),contact.getMobile());
+		type(By.name("work"),contact.getWork());
+		type(By.name("email"),contact.getEmail());
+		type(By.name("email2"),contact.getEmail2());
+	    selectByText(By.name("bday"),contact.getBday());
+	    selectByText(By.name("bmonth"),contact.getBmonth());
+		type(By.name("byear"),contact.getByear());
 		if (formType == CREATION) {
             //	    selectByText(By.name("new group"),"group 1");
 		} else {
@@ -89,29 +87,35 @@ public class ContactHelper extends HelperBase{
 		}
 	}
 	
-	public void returnToHomePage() {
+	public ContactHelper returnToHomePage() {
 		click(By.linkText("home page"));
+		return this;
 	}
 	
-	private void selectContactByIndex(int index) {
+	private ContactHelper selectContactByIndex(int index) {
 		click(By.xpath("//tr[@name='entry'][" + (index + 1) + "]/td/a/img[@title='Edit']"));
+		return this;
 	}
 	
-   public void deleteContact(int index) {
+   public ContactHelper deleteContact(int index) {
 		selectContactByIndex(index);
 		click(By.xpath("//input[@name='update'][@value='Delete']"));
+		return this;
 	}
 	
-	public void submitContactCreation() {
+	public ContactHelper submitContactCreation() {
 		click(By.name("submit"));
+		return this;
 	}
 
-	public void initContactModification(int index) {
+	public ContactHelper initContactModification(int index) {
 		selectContactByIndex(index);
+		return this;
 	}
 	
-	public void submitContactModification() {
+	public ContactHelper submitContactModification() {
 		click(By.xpath("//input[@name='update'][@value='Update']"));
+		return this;
 	}
 
-	 }
+}

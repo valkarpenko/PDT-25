@@ -1,20 +1,20 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData>{
-	public String firstname;
-	public String lastname;
-	public String address;
-	public String home;
-	public String mobile;
-	public String work;
-	public String email;
-	public String email2;
-	public String bday;
-	public String bmonth;
-	public String byear;
-	public String address1;
-	public String address2;
-	public String phone2;
+	private String firstname;
+	private String lastname;
+	private String address;
+	private String home;
+	private String mobile;
+	private String work;
+	private String email;
+	private String email2;
+	private String bday;
+	private String bmonth;
+	private String byear;
+	private String address1;
+	private String address2;
+	private String phone2;
 
 	public ContactData() {
 	}
@@ -124,7 +124,48 @@ public class ContactData implements Comparable<ContactData>{
 		this.phone2 = phone2;
 		return this;
 	}
-	
+	public String getFirstname() {
+		return firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public String getHome() {
+		return home;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public String getWork() {
+		return work;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public String getEmail2() {
+		return email2;
+	}
+	public String getBday() {
+		return bday;
+	}
+	public String getBmonth() {
+		return bmonth;
+	}
+	public String getByear() {
+		return byear;
+	}
+	public String getAddress1() {
+		return address1;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public String getPhone2() {
+		return phone2;
+	}
 		
 	
 }
