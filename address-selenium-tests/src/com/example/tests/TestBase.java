@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
 import com.example.fw.ApplicationManager;
+import static com.example.tests.GroupDataGenerator.generateRandomGroups;
+
 
 public class TestBase {
     protected static ApplicationManager app;
@@ -24,18 +26,6 @@ public class TestBase {
 	public void tearDown() throws Exception {
 		app.stop();
 	  }
-	@DataProvider	
-	public Iterator<Object[]> randomValidGroupGenerator() {
-		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i = 0; i < 4; i++) {
-			GroupData group = new GroupData()
-			  .withName(generateRandomString())
-			  .withHeader(generateRandomString())
-			  .withFooter(generateRandomString());
-			list.add(new Object[]{group});
-		}
-		return list.iterator();
-	}
 
 	@DataProvider	
 	public Iterator<Object[]> randomValidContactGenerator() {
@@ -144,6 +134,20 @@ public class TestBase {
             return strYear;
         }
     }
+	
+	@DataProvider	
+	public Iterator<Object[]> randomValidGroupGenerator() {
+		return wrapGroupsForDataProvider(generateRandomGroups(5)).iterator();
+	}
+	
+	public static List<Object[]> wrapGroupsForDataProvider(List<GroupData> groups) {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (GroupData group : groups) {
+			list.add(new Object[]{group});
+		}
+		return list;
+	}
+
 	
 
 }

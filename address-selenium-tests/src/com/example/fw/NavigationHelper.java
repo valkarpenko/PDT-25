@@ -15,7 +15,7 @@ public class NavigationHelper extends HelperBase{
 	}
 
 	private boolean onMainPage() {
-		return driver.findElements(By.name("maintable")).size() > 0;
+		return (driver.getCurrentUrl().contains("/groups.php") && driver.findElements(By.name("new")).size() > 0);
 	}
 
 	public void groupsPage() {
